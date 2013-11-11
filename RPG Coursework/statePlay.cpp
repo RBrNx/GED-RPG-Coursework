@@ -18,7 +18,7 @@ void StatePlay::Draw(SDL_Window *window)
 	  glVertex3f (xpos, ypos+ysize, 0.0); // fourth corner
 	glEnd();
 	playerText->textToTexture("Player",textFont);
-	playerText->draw(xpos+(xsize/2.0f), ypos+ysize);
+	playerText->draw(xpos, ypos+ysize);
 
     // draw target
     glColor3f(1.0,0.0,0.0);
@@ -29,7 +29,7 @@ void StatePlay::Draw(SDL_Window *window)
       glVertex3f (targetXPos, targetYPos+targetYSize, 0.0); // fourth corner
     glEnd();
 	targetText->textToTexture("Target",textFont);
-	targetText->draw(targetXPos+(targetXSize/2.0f), targetYPos+targetYSize);
+	targetText->draw(targetXPos, targetYPos+targetYSize);
     
     if ( (targetXPos >= xpos) && (targetXPos+targetXSize <= xpos+xsize)	// cursor surrounds target in x
 	  && (targetYPos >= ypos) && (targetYPos+targetYSize <= ypos+ysize) ) // cursor surrounds target in y

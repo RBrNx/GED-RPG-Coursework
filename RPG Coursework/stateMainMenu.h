@@ -3,6 +3,12 @@
 
 class stateMainMenu: public GameState {
 private:
+	Label * continueText;
+	Label * loadText;
+	Label * newgameText;
+	Label * creditsText;
+	Label * quitText;
+	TTF_Font* textFont;
 
 public:
 	stateMainMenu();

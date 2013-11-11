@@ -15,11 +15,13 @@ public:
 	void Exit();
 	~StatePlay();
 	
+	
+	
 
 private:
 	clock_t currentTime;
 	clock_t lastTime;
-
+	
 	TTF_Font* textFont;
 	GameState * playState;
 	GameState * mainMenuState;

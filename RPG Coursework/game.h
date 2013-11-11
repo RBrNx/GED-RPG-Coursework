@@ -19,6 +19,7 @@
 
 #if _DEBUG
 	#pragma comment(linker, "/subsystem:\"console\" /entry:\"WinMainCRTStartup\"")
+#pragma comment (lib, "glu32.lib")
 #endif
 
 extern GameState * stateMenu;
