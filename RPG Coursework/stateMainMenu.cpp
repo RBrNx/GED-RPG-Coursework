@@ -63,7 +63,7 @@ void stateMainMenu::HandleSDLEvent(SDL_Event const &sdlEvent, Game &context) {
 			//continue game
 			break;
 		case 'r': case 'R':
-			//roll credits
+			context.setState(stateCredit);
 			break;
 		case 'l': case 'L': 
 			//load game

@@ -30,6 +30,9 @@
     <ClCompile Include="statePlay.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="stateCredits.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -45,6 +48,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="statePlay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stateCredits.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

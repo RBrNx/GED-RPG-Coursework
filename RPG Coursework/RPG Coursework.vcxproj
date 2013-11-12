@@ -82,6 +82,7 @@
     <ClCompile Include="game.cpp" />
     <ClCompile Include="Label.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="stateCredits.cpp" />
     <ClCompile Include="stateMainMenu.cpp" />
     <ClCompile Include="statePlay.cpp" />
   </ItemGroup>
@@ -89,6 +90,7 @@
     <ClInclude Include="game.h" />
     <ClInclude Include="gameState.h" />
     <ClInclude Include="Label.h" />
+    <ClInclude Include="stateCredits.h" />
     <ClInclude Include="stateMainMenu.h" />
     <ClInclude Include="statePlay.h" />
   </ItemGroup>

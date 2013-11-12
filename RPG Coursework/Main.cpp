@@ -2,9 +2,11 @@
 #include "game.h"
 #include "stateMainMenu.h"
 #include "statePlay.h"
+#include "stateCredits.h"
 
 GameState * PlayState = new StatePlay();
 GameState * stateMenu = new stateMainMenu();
+GameState * stateCredit = new stateCredits();
 
 // Program entry point
 // SDL manages the actual WinMain entry point for us

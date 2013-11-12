@@ -24,6 +24,7 @@
 
 extern GameState * stateMenu;
 extern GameState * PlayState;
+extern GameState * stateCredit;
 
 class Game
 {
