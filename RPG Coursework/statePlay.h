@@ -2,7 +2,9 @@
 
 #include "gameState.h"
 #include "Label.h"
+#include "Player.h"
 
+class Raider;
 
 class StatePlay: public GameState {
 public:
@@ -11,35 +13,22 @@ public:
 	void HandleSDLEvent(SDL_Event const &sdlEvent, Game &context);
 	void Init(Game * context);
 	void Init(Game &context);
+	void Update(Game &context);
 	void Enter();
 	void Exit();
-	~StatePlay();
-	
-	
-	
+	~StatePlay();	
 
 private:
 	clock_t currentTime;
 	clock_t lastTime;
-	
+
 	TTF_Font* textFont;
 	GameState * playState;
 	GameState * mainMenuState;
 	GameState * currentState;
 
-	float xsize;
-	float ysize;
-	float xpos;
-	float ypos;
-
-	float targetXSize;
-	float targetYSize;
-	float targetXPos;
-	float targetYPos;
-
-	int score;
-
-	Label * scoreText;
-	Label * playerText;
-	Label * targetText;
+	Raider * raider;
+	Raider * raider2;
+	Raider * raider3;
+	Player * player;
 };

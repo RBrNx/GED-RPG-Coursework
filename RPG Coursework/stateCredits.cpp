@@ -40,6 +40,10 @@ void stateCredits::Init(Game * context) {
 
 }
 
+void stateCredits::Update(Game &context){
+
+}
+
 void stateCredits::Init(Game &context) {
 	textFont = TTF_OpenFont("MavenPro-Regular.ttf", 36);
 	textFont72 = TTF_OpenFont("MavenPro-Regular.ttf", 72);

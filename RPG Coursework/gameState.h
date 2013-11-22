@@ -22,7 +22,7 @@ public:
 	virtual void Init(Game&) = 0;
 	virtual void Init(Game*) = 0;
 	// Not using update function yet
-	// virtual void update(void) = 0
+	virtual void Update(Game&) = 0;
 	virtual void HandleSDLEvent(SDL_Event const &sdlEvent, Game &) = 0;
 	virtual void Enter() = 0;
 	virtual void Exit() = 0;

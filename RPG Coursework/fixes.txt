@@ -1,0 +1,11 @@
+
+// Fixes
+
+In the header file, you included another file, that included the original file
+so it just created a loop when you tried to compile it :)
+
+The other problem was with the getposx they are functions 
+so you need to call them like this
+
+wrong = getxpos
+right = getxpos() 

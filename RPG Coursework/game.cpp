@@ -1,4 +1,5 @@
 #include "game.h"
+#include "statePlay.h"
 
 
 Game::Game()
@@ -36,10 +37,10 @@ SDL_Window * Game::SetupRC(SDL_GLContext &context)
 	SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1);
 	SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 4);
  
-    // Create 800x600 window
+    // Create 800x800 window
     window = SDL_CreateWindow("SDL OpenGL Demo for GED",
 		SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-        800, 600, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN );
+        800, 800, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN );
 	if (!window) // Check window was created OK
         ExitFatalError("Unable to create window");
  
@@ -74,11 +75,13 @@ void Game::run()
 		{
 			if (Event.type == SDL_QUIT)
 				isRunning = false;
-			else
-				State->HandleSDLEvent(Event, *this);
+			else{
+				State->HandleSDLEvent(Event, *this);	
+			}
 
 		}
-		//update(); // this is the place to put a call to the game update function
+		
+		State->Update(*this); // this is the place to put a call to the game update function
 		State->Draw(Window); // call the draw function
 	}
 	SDL_DestroyWindow(Window);

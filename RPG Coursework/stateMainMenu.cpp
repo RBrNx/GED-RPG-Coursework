@@ -3,26 +3,29 @@
 #include "game.h"
 
 stateMainMenu::stateMainMenu() {
+	newgameText = new Label();
+	continueText = new Label();
+	loadText = new Label();
+	creditsText = new Label();
+	quitText = new Label();
+	
+	textFont = TTF_OpenFont("MavenPro-Regular.ttf", 36);
 
+	newgameText->textToTexture("New Game (N)",textFont);
+	continueText->textToTexture("Continue Game (C)",textFont);
+	loadText->textToTexture("Load Game (L)",textFont);
+	creditsText->textToTexture("Credits (R)",textFont);
+	quitText->textToTexture("Quit (Q/Esc)",textFont);
 }
 
 void stateMainMenu::Draw(SDL_Window * window) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glClearColor(1.0f, 0.0f, 0.0f, 0.1f);
 
-	newgameText->textToTexture("New Game (N)",textFont);
 	newgameText->draw(-0.8f,0.0f);
-	
-	continueText->textToTexture("Continue Game (C)",textFont);
 	continueText->draw(-0.8f,-0.2f);
-	
-	loadText->textToTexture("Load Game (L)",textFont);
 	loadText->draw(-0.8f,-0.4f);
-	
-	creditsText->textToTexture("Credits (R)",textFont);
 	creditsText->draw(-0.8f,-0.6f);
-	
-	quitText->textToTexture("Quit (Q/Esc)",textFont);
 	quitText->draw(-0.8f,-0.8f);
 
 	SDL_GL_SwapWindow(window);
@@ -39,15 +42,11 @@ void stateMainMenu::Init(Game * context) {
 
 }
 
-void stateMainMenu::Init(Game &context) {
-	textFont = TTF_OpenFont("MavenPro-Regular.ttf", 36);
-	
-	newgameText = new Label();
-	continueText = new Label();
-	loadText = new Label();
-	creditsText = new Label();
-	quitText = new Label();
-	
+void stateMainMenu::Init(Game &context) {	
+}
+
+void stateMainMenu::Update(Game &context){
+
 }
 
 void stateMainMenu::HandleSDLEvent(SDL_Event const &sdlEvent, Game &context) {

@@ -5,6 +5,8 @@ Label::Label()
 	height = NULL;
 	width = NULL;
 	texID = NULL;
+
+	glGenTextures(1, &texID);
 }
 
 void Label::draw(float x ,float y) 
@@ -28,7 +30,7 @@ void Label::draw(float x ,float y)
 void Label::textToTexture(std::string str, TTF_Font * textFont) 
 {
 	SDL_Surface *stringImage;
-	SDL_Color colour = { 255, 255, 0 };
+	SDL_Color colour = { 255, 255, 255 };
 	
 	stringImage = TTF_RenderText_Blended(textFont, str.c_str(), colour);
 
@@ -50,7 +52,6 @@ void Label::textToTexture(std::string str, TTF_Font * textFont)
 
 	internalFormat = (colours == 4) ? GL_RGBA : GL_RGB;
 
-	glGenTextures(1, &texID);
 	glBindTexture(GL_TEXTURE_2D, texID); 
 
 	glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S, GL_CLAMP);

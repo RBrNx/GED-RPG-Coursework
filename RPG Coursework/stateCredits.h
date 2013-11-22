@@ -17,6 +17,7 @@ public:
 	void Draw(SDL_Window * window);
 	void Init(Game * context);
 	void Init(Game &context);
+	void Update(Game &context);
 	void Enter();
 	void Exit();
 	~stateCredits();
