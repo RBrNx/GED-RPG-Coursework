@@ -9,6 +9,11 @@ Raider::Raider(Player * player) : Monster(player)
 	raiderText = new Label();
 	raiderText->textToTexture("Raider",textFont);
 
+	SetHealth(12);
+	SetStrength(7);
+	SetSpeed(12);
+	SetID(2);
+
 }
 
 bool Raider::Update(){
@@ -27,7 +32,7 @@ void Raider::Draw(SDL_Window *window)
 {
     glBegin(GL_POLYGON);
 	
-		glColor3f(0.0,1.0,0.0);
+		glColor3f(0.0,0.0,1.0);
       
 		glVertex2f(this->GetXPos(), this->GetYPos()); 
 		glVertex2f(this->GetXPos() + this->GetXSize(), this->GetYPos()); 

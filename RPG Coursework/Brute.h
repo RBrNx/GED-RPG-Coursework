@@ -1,17 +1,21 @@
 #pragma once
 #include "Monster.h"
+#include "gameState.h"
+#include "statePlay.h"
+#include "Label.h"
 
 class Brute : public Monster
 {
 public:
 	Brute(Player *);
-	//void Draw(SDL_Window *window);
-	//bool Update();
+	void Draw(SDL_Window *window);
+	bool Update();
 	~Brute(void);
 
-	float xpos;
-	float ypos;
-	float xsize;
-	float ysize;
+private:
+
+	TTF_Font* textFont;
+	Label * bruteText;
+	Player * player;
 };
 

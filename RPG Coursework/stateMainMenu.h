@@ -1,5 +1,8 @@
+#pragma once
 #include "gameState.h"
 #include "Label.h"
+#include "Brute.h"
+#include "Raider.h"
 
 class stateMainMenu: public GameState {
 private:
@@ -19,6 +22,9 @@ public:
 	void Update(Game &context);
 	void Enter();
 	void Exit();
+	bool GetContinuable();
+	bool GetGameStarted();
+	void SetGameStarted();
 	~stateMainMenu();
 
 };

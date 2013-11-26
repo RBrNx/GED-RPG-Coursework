@@ -60,6 +60,12 @@
     <ClCompile Include="Brute.cpp">
       <Filter>Source Files\Characters</Filter>
     </ClCompile>
+    <ClCompile Include="stateBattle.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Fodder.cpp">
+      <Filter>Source Files\Characters</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -93,6 +99,12 @@
       <Filter>Header Files\Characters</Filter>
     </ClInclude>
     <ClInclude Include="Brute.h">
+      <Filter>Header Files\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="stateBattle.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Fodder.h">
       <Filter>Header Files\Characters</Filter>
     </ClInclude>
   </ItemGroup>

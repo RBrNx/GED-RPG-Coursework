@@ -85,6 +85,17 @@ float Player::GetYSize(){
 	return ysize;
 }
 
+int Player::GetHealth(){
+	return Health;
+}
+
+int Player::GetStrength(){
+	return Strength;
+}
+
+int Player::GetSpeed(){
+	return Speed;
+}
 
 Player::~Player(void)
 {

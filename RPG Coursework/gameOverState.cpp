@@ -25,6 +25,18 @@ void gameOverState::Enter() {
 void gameOverState::Exit() {
 }
 
+bool gameOverState::GetContinuable() {
+	return 0;
+}
+
+bool gameOverState::GetGameStarted() {
+	return 0;
+}
+void gameOverState::SetGameStarted() {
+
+}
+
+
 void gameOverState::Init(Game * context) {
 
 }

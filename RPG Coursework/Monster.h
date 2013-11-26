@@ -20,11 +20,13 @@ public:
 	void SetHealth(int health);
 	void SetStrength(int strength);
 	void SetSpeed(int speed);
+	void SetID(int ID);
 	
 private:
 	int Health;
 	int Strength;
 	int Speed;
+	int ID;
 
 	float xpos;
 	float ypos;

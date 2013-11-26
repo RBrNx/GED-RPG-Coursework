@@ -14,6 +14,9 @@ public:
 	float GetYPos();
 	float GetXSize();
 	float GetYSize();
+	int GetHealth();
+	int GetStrength();
+	int GetSpeed();
 	~Player(void);
 
 private:

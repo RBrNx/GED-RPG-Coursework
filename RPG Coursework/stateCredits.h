@@ -1,3 +1,4 @@
+#pragma once
 #include "gameState.h"
 #include "Label.h"
 
@@ -20,6 +21,9 @@ public:
 	void Update(Game &context);
 	void Enter();
 	void Exit();
+	bool GetContinuable();
+	bool GetGameStarted();
+	void SetGameStarted();
 	~stateCredits();
 
 };

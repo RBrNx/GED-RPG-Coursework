@@ -10,6 +10,7 @@
 // #include "Game.h"
 // we have a 'forward declaration' of the class:
 class Game;
+class Player;
 // Game.h will still need to be included in the state implementation files
 
 // Abstract game state class
@@ -25,5 +26,8 @@ public:
 	virtual void Update(Game&) = 0;
 	virtual void HandleSDLEvent(SDL_Event const &sdlEvent, Game &) = 0;
 	virtual void Enter() = 0;
+	virtual bool GetContinuable() = 0;
+	virtual	bool GetGameStarted() = 0;
+	virtual void SetGameStarted() = 0;
 	virtual void Exit() = 0;
 };

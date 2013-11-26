@@ -80,6 +80,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Brute.cpp" />
+    <ClCompile Include="Fodder.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gameOverState.cpp" />
     <ClCompile Include="Label.cpp" />
@@ -87,12 +88,14 @@
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Raider.cpp" />
+    <ClCompile Include="stateBattle.cpp" />
     <ClCompile Include="stateCredits.cpp" />
     <ClCompile Include="stateMainMenu.cpp" />
     <ClCompile Include="statePlay.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Brute.h" />
+    <ClInclude Include="Fodder.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gameOverState.h" />
     <ClInclude Include="gameState.h" />
@@ -100,6 +103,7 @@
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Raider.h" />
+    <ClInclude Include="stateBattle.h" />
     <ClInclude Include="stateCredits.h" />
     <ClInclude Include="stateMainMenu.h" />
     <ClInclude Include="statePlay.h" />

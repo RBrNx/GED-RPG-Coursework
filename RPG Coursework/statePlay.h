@@ -1,10 +1,16 @@
 #pragma once
 
+#include <vector>
 #include "gameState.h"
 #include "Label.h"
 #include "Player.h"
+#include "stateMainMenu.h"
+
+using std::vector;
 
 class Raider;
+class Brute;
+class Fodder;
 
 class StatePlay: public GameState {
 public:
@@ -15,10 +21,16 @@ public:
 	void Init(Game &context);
 	void Update(Game &context);
 	void Enter();
+	bool GetContinuable();
+	bool GetGameStarted();
+	void SetGameStarted();
 	void Exit();
 	~StatePlay();	
 
 private:
+	int enemyDelete;
+	bool continuable;
+	bool gameStarted;
 	clock_t currentTime;
 	clock_t lastTime;
 
@@ -27,8 +39,7 @@ private:
 	GameState * mainMenuState;
 	GameState * currentState;
 
-	Raider * raider;
-	Raider * raider2;
-	Raider * raider3;
+	vector<Monster *> monsters;
+
 	Player * player;
 };

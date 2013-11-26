@@ -26,6 +26,7 @@ extern GameState * stateMenu;
 extern GameState * PlayState;
 extern GameState * stateCredit;
 extern GameState * gameOver;
+extern GameState * battleState;
 
 class Game
 {

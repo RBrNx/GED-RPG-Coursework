@@ -9,6 +9,7 @@ Monster::Monster(Player * player)
 	Health = 0;
 	Strength = 0;
 	Speed = 0;
+	ID = 0;
 
 	xsize = 0.15f;
 	ysize = 0.15f;
@@ -35,6 +36,10 @@ void Monster::SetStrength(int strength){
 
 void Monster::SetSpeed(int speed){
 	Speed = speed;
+}
+
+void Monster::SetID(int id){
+	ID = id;
 }
 
 float Monster::GetXPos(){

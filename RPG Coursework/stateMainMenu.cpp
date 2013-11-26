@@ -3,6 +3,7 @@
 #include "game.h"
 
 stateMainMenu::stateMainMenu() {
+
 	newgameText = new Label();
 	continueText = new Label();
 	loadText = new Label();
@@ -49,17 +50,31 @@ void stateMainMenu::Update(Game &context){
 
 }
 
+bool stateMainMenu::GetContinuable() {
+	return 0;
+}
+
+bool stateMainMenu::GetGameStarted() {
+	return 0;
+}
+void stateMainMenu::SetGameStarted() {
+}
+
+
 void stateMainMenu::HandleSDLEvent(SDL_Event const &sdlEvent, Game &context) {
 	if(sdlEvent.type == SDL_KEYDOWN) {
 		switch(sdlEvent.key.keysym.sym) {
 		case 'n': case 'N':
-			context.setState(PlayState); 
+			PlayState->SetGameStarted();
+			context.setState(PlayState);
 			break;
 		case 'q': case 'Q': case SDLK_ESCAPE: 
 			exit(1); 
 			break;
 		case 'c': case 'C': 
-			//continue game
+			if (PlayState->GetContinuable() == true) {
+				context.setState(PlayState);
+			}
 			break;
 		case 'r': case 'R':
 			context.setState(stateCredit);
@@ -73,6 +88,7 @@ void stateMainMenu::HandleSDLEvent(SDL_Event const &sdlEvent, Game &context) {
 		}
 	}
 }
+
 
 stateMainMenu::~stateMainMenu(){
 

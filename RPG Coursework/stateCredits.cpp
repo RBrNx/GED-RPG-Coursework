@@ -36,6 +36,18 @@ void stateCredits::Enter() {
 void stateCredits::Exit() {
 }
 
+bool stateCredits::GetContinuable() {
+	return 0;
+}
+
+bool stateCredits::GetGameStarted() {
+	return 0;
+}
+void stateCredits::SetGameStarted() {
+
+}
+
+
 void stateCredits::Init(Game * context) {
 
 }

@@ -11,7 +11,7 @@ class Label
 
 	Label();
 	~Label();
-
+	Label(float, float);
 		int getHeight();
 		int getWidth();
 		int getID();
@@ -20,7 +20,8 @@ class Label
 		void draw(float, float);
 
 	private:
-
+		float x;
+		float y;
 		GLuint texID;
 		GLuint height;
 		GLuint width;

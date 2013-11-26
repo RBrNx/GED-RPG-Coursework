@@ -5,8 +5,18 @@ Label::Label()
 	height = NULL;
 	width = NULL;
 	texID = NULL;
-
+	x = NULL;
+	y = NULL;
 	glGenTextures(1, &texID);
+}
+
+Label::Label(float x, float y)
+{
+	height = NULL;
+	width = NULL;
+	texID = NULL;
+	this->x = x;
+	this->y = y;
 }
 
 void Label::draw(float x ,float y) 

@@ -15,6 +15,9 @@ public:
 	void Update(Game &context);
 	void Enter();
 	void Exit();
+	bool GetContinuable();
+	bool GetGameStarted();
+	void SetGameStarted();
 	~gameOverState(void);
 
 private:
