@@ -25,6 +25,12 @@
     <Filter Include="Source Files\Characters">
       <UniqueIdentifier>{6014bcd1-a175-4e88-9aa9-fd3d932f027f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Game\States">
+      <UniqueIdentifier>{12af7c3f-b42a-49b7-9121-2c12c82f5e84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\States">
+      <UniqueIdentifier>{f9cb02e9-aa80-435b-b0b3-9c162ae98c90}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="game.cpp">
@@ -36,20 +42,8 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
-    <ClCompile Include="stateCredits.cpp">
-      <Filter>Source Files\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="stateMainMenu.cpp">
-      <Filter>Source Files\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="statePlay.cpp">
-      <Filter>Source Files\Game</Filter>
-    </ClCompile>
     <ClCompile Include="Raider.cpp">
       <Filter>Source Files\Characters</Filter>
-    </ClCompile>
-    <ClCompile Include="gameOverState.cpp">
-      <Filter>Source Files\Game</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Source Files\Characters</Filter>
@@ -60,37 +54,37 @@
     <ClCompile Include="Brute.cpp">
       <Filter>Source Files\Characters</Filter>
     </ClCompile>
-    <ClCompile Include="stateBattle.cpp">
-      <Filter>Source Files\Game</Filter>
-    </ClCompile>
     <ClCompile Include="Fodder.cpp">
       <Filter>Source Files\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="gameOverState.cpp">
+      <Filter>Source Files\Game\States</Filter>
+    </ClCompile>
+    <ClCompile Include="stateBattle.cpp">
+      <Filter>Source Files\Game\States</Filter>
+    </ClCompile>
+    <ClCompile Include="stateCredits.cpp">
+      <Filter>Source Files\Game\States</Filter>
+    </ClCompile>
+    <ClCompile Include="stateMainMenu.cpp">
+      <Filter>Source Files\Game\States</Filter>
+    </ClCompile>
+    <ClCompile Include="statePlay.cpp">
+      <Filter>Source Files\Game\States</Filter>
+    </ClCompile>
+    <ClCompile Include="stateSplash.cpp">
+      <Filter>Source Files\Game\States</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
       <Filter>Header Files\Game</Filter>
     </ClInclude>
-    <ClInclude Include="gameState.h">
-      <Filter>Header Files\Game</Filter>
-    </ClInclude>
     <ClInclude Include="Label.h">
-      <Filter>Header Files\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="stateCredits.h">
-      <Filter>Header Files\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="stateMainMenu.h">
-      <Filter>Header Files\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="statePlay.h">
       <Filter>Header Files\Game</Filter>
     </ClInclude>
     <ClInclude Include="Raider.h">
       <Filter>Header Files\Characters</Filter>
-    </ClInclude>
-    <ClInclude Include="gameOverState.h">
-      <Filter>Header Files\Game</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Header Files\Characters</Filter>
@@ -101,11 +95,29 @@
     <ClInclude Include="Brute.h">
       <Filter>Header Files\Characters</Filter>
     </ClInclude>
-    <ClInclude Include="stateBattle.h">
-      <Filter>Header Files\Game</Filter>
-    </ClInclude>
     <ClInclude Include="Fodder.h">
       <Filter>Header Files\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="gameOverState.h">
+      <Filter>Header Files\Game\States</Filter>
+    </ClInclude>
+    <ClInclude Include="gameState.h">
+      <Filter>Header Files\Game\States</Filter>
+    </ClInclude>
+    <ClInclude Include="stateBattle.h">
+      <Filter>Header Files\Game\States</Filter>
+    </ClInclude>
+    <ClInclude Include="stateCredits.h">
+      <Filter>Header Files\Game\States</Filter>
+    </ClInclude>
+    <ClInclude Include="stateMainMenu.h">
+      <Filter>Header Files\Game\States</Filter>
+    </ClInclude>
+    <ClInclude Include="statePlay.h">
+      <Filter>Header Files\Game\States</Filter>
+    </ClInclude>
+    <ClInclude Include="stateSplash.h">
+      <Filter>Header Files\Game\States</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

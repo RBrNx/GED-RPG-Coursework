@@ -6,7 +6,7 @@ Monster::Monster(Player * player)
 	this->player = player;
 	textFont = NULL;
 
-	Health = 0;
+	Health = 0; 
 	Strength = 0;
 	Speed = 0;
 	ID = 0;
@@ -19,7 +19,7 @@ Monster::Monster(Player * player)
 }
 
 void Monster::SetXPos(float Xpos){
-	xpos = Xpos;
+    xpos = Xpos;
 }
 
 void Monster::SetYPos(float Ypos){
@@ -56,6 +56,22 @@ float Monster::GetXSize(){
 
 float Monster::GetYSize(){
 	return ysize;
+}
+
+int Monster::GetID(){
+	return ID;
+}
+
+int Monster::GetHealth(){
+	return Health;
+}
+
+int Monster::GetStrength(){
+	return Strength;
+}
+
+int Monster::GetSpeed(){
+	return Speed;
 }
 
 Monster::~Monster(void)

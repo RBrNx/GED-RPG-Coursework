@@ -3,13 +3,13 @@
 
 Player::Player(void)
 {
-	textFont = TTF_OpenFont("MavenPro-Regular.ttf", 24);
+	textFont = TTF_OpenFont("MavenPro-Regular.ttf", 24); //init font
 
 	playerText = new Label();
-	playerText->textToTexture("Player",textFont);
+	playerText->textToTexture("Player",textFont); //sets up label
 
 	Health = 12;
-	Strength = 7;
+	Strength = 7; //sets up initial stats
 	Speed = 12;
 
 	xsize = 0.15f;
@@ -26,7 +26,7 @@ void Player::Update()
 
 void Player::Draw(SDL_Window *window) 
 {
-    glBegin(GL_POLYGON);
+    glBegin(GL_POLYGON); //draws player
 	
 		glColor3f(1.0,1.0,1.0);
       
@@ -37,14 +37,14 @@ void Player::Draw(SDL_Window *window)
     
 	glEnd();
 
-	playerText->draw(xpos, ypos + ysize);
+	playerText->draw(xpos, ypos + ysize); //draws label
 }
 
 void Player::HandleSDLEvent(SDL_Event const &sdlEvent, Game &context) {
 	if(sdlEvent.type == SDL_KEYDOWN) {
 		switch(sdlEvent.key.keysym.sym) {
 			case SDLK_UP:
-			case 'w': case 'W': 
+			case 'w': case 'W': //moves player on key press
 				ypos += 0.05f;
 				break;
 

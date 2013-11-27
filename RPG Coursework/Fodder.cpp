@@ -3,15 +3,15 @@
 
 Fodder::Fodder(Player * player) : Monster(player)
 {
-	this->player = player;
-	textFont = TTF_OpenFont("MavenPro-Regular.ttf", 24);
+	this->player = player; //passes player to fodder
+	textFont = TTF_OpenFont("MavenPro-Regular.ttf", 24); //init font
 
 	FodderText = new Label();
-	FodderText->textToTexture("Fodder",textFont);
+	FodderText->textToTexture("Fodder",textFont); //sets up label
 
-	SetHealth(12);
-	SetStrength(7);
-	SetSpeed(12);
+	SetHealth(3);
+	SetStrength(3);
+	SetSpeed(7);
 	SetID(2);
 
 }
@@ -19,7 +19,7 @@ Fodder::Fodder(Player * player) : Monster(player)
 bool Fodder::Update(){
 	if(player->GetXPos() <= this->GetXPos() + this->GetXSize() && player->GetXPos() + player->GetXSize() >= this->GetXPos()) {
 		if(player->GetYPos() <= this->GetYPos() + this->GetYSize() && player->GetYPos() + player->GetYSize() >= this->GetYPos()){
-			return true;
+			return true; //returns true if there is a collision
 		} else { 
 			return false; 
 		}
@@ -30,9 +30,9 @@ bool Fodder::Update(){
 
 void Fodder::Draw(SDL_Window *window) 
 {
-    glBegin(GL_POLYGON);
+    glBegin(GL_POLYGON); //draws fodder
 	
-		glColor3f(0.0,1.0,0.0);
+		glColor3f(0.0,1.0,0.0); //green
       
 		glVertex2f(this->GetXPos(), this->GetYPos()); 
 		glVertex2f(this->GetXPos() + this->GetXSize(), this->GetYPos()); 
@@ -41,7 +41,7 @@ void Fodder::Draw(SDL_Window *window)
     
 	glEnd();
 
-	FodderText->draw(this->GetXPos(), this->GetYPos() + this->GetYSize());
+	FodderText->draw(this->GetXPos(), this->GetYPos() + this->GetYSize()); // draws label
 }
 
 

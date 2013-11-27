@@ -7,15 +7,15 @@
 class Brute : public Monster
 {
 public:
-	Brute(Player *);
+	Brute(Player *); //pass player into brute for collision
 	void Draw(SDL_Window *window);
 	bool Update();
 	~Brute(void);
 
 private:
 
-	TTF_Font* textFont;
-	Label * bruteText;
-	Player * player;
+	TTF_Font* textFont; //setup font
+	Label * bruteText; //pointer to brute label
+	Player * player; //pointer to player object
 };
 

@@ -92,6 +92,7 @@
     <ClCompile Include="stateCredits.cpp" />
     <ClCompile Include="stateMainMenu.cpp" />
     <ClCompile Include="statePlay.cpp" />
+    <ClCompile Include="stateSplash.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Brute.h" />
@@ -107,6 +108,7 @@
     <ClInclude Include="stateCredits.h" />
     <ClInclude Include="stateMainMenu.h" />
     <ClInclude Include="statePlay.h" />
+    <ClInclude Include="stateSplash.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

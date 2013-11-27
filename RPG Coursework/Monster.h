@@ -5,7 +5,7 @@
 class Monster
 {
 public:
-	Monster(Player*);
+	Monster(Player*); //pass player into the monsters for collision
 	virtual ~Monster();
 	virtual void Draw(SDL_Window *window) = 0;
 	virtual bool Update() = 0;
@@ -14,6 +14,10 @@ public:
 	float GetYPos();
 	float GetXSize();
 	float GetYSize();
+	int GetID();
+	int GetHealth();
+	int GetStrength();
+	int GetSpeed();
 
 	void SetXPos(float Xpos);
 	void SetYPos(float Ypos);
@@ -26,7 +30,7 @@ private:
 	int Health;
 	int Strength;
 	int Speed;
-	int ID;
+	int ID; 
 
 	float xpos;
 	float ypos;

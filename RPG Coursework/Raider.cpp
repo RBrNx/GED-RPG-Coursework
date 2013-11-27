@@ -3,23 +3,23 @@
 
 Raider::Raider(Player * player) : Monster(player)
 {
-	this->player = player;
-	textFont = TTF_OpenFont("MavenPro-Regular.ttf", 24);
+	this->player = player; //passes player to raider
+	textFont = TTF_OpenFont("MavenPro-Regular.ttf", 24); //init font
 
 	raiderText = new Label();
-	raiderText->textToTexture("Raider",textFont);
+	raiderText->textToTexture("Raider",textFont); //sets up label
 
-	SetHealth(12);
+	SetHealth(12); //inital stats
 	SetStrength(7);
 	SetSpeed(12);
-	SetID(2);
+	SetID(3);
 
 }
 
 bool Raider::Update(){
 	if(player->GetXPos() <= this->GetXPos() + this->GetXSize() && player->GetXPos() + player->GetXSize() >= this->GetXPos()) {
 		if(player->GetYPos() <= this->GetYPos() + this->GetYSize() && player->GetYPos() + player->GetYSize() >= this->GetYPos()){
-			return true;
+			return true; //returns true if there is a collision
 		} else { 
 			return false; 
 		}
@@ -30,9 +30,9 @@ bool Raider::Update(){
 
 void Raider::Draw(SDL_Window *window) 
 {
-    glBegin(GL_POLYGON);
+    glBegin(GL_POLYGON); //draws raider
 	
-		glColor3f(0.0,0.0,1.0);
+		glColor3f(1.0,0.0,0.0);
       
 		glVertex2f(this->GetXPos(), this->GetYPos()); 
 		glVertex2f(this->GetXPos() + this->GetXSize(), this->GetYPos()); 
@@ -41,7 +41,7 @@ void Raider::Draw(SDL_Window *window)
     
 	glEnd();
 
-	raiderText->draw(this->GetXPos(), this->GetYPos() + this->GetYSize());
+	raiderText->draw(this->GetXPos(), this->GetYPos() + this->GetYSize()); //draws label
 }
 
 
