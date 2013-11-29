@@ -31,6 +31,12 @@
     <Filter Include="Header Files\Game\States">
       <UniqueIdentifier>{f9cb02e9-aa80-435b-b0b3-9c162ae98c90}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Items">
+      <UniqueIdentifier>{7902628d-1323-4160-be91-4cad82717203}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items">
+      <UniqueIdentifier>{d0b29b0d-7cb7-4c75-a406-67386151a9db}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="game.cpp">
@@ -75,6 +81,18 @@
     <ClCompile Include="stateSplash.cpp">
       <Filter>Source Files\Game\States</Filter>
     </ClCompile>
+    <ClCompile Include="HealthPack.cpp">
+      <Filter>Source Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Items.cpp">
+      <Filter>Source Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="CombatPack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StimulantPack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -118,6 +136,18 @@
     </ClInclude>
     <ClInclude Include="stateSplash.h">
       <Filter>Header Files\Game\States</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthPack.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Items.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatPack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StimulantPack.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

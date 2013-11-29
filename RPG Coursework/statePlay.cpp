@@ -5,6 +5,12 @@
 #include "Brute.h"
 #include "stateBattle.h"
 #include "Fodder.h"
+#include "HealthPack.h"
+#include "CombatPack.h"
+#include "StimulantPack.h"
+#include <sstream>
+
+#define RAND_CODE (float(rand())/float(RAND_MAX))
 
 StatePlay::StatePlay() {
 	textFont = TTF_OpenFont("MavenPro-Regular.ttf", 24); //init font
@@ -14,6 +20,7 @@ StatePlay::StatePlay() {
 	continuable = false; //bool variable if game is able to be continued
 	gameStarted = false; //bool variable if game has already started
 	enemyDelete = 0; //init variable
+	itemDelete = 0; //init variable
 
 	player = new Player(); //create player
 
@@ -28,6 +35,13 @@ StatePlay::StatePlay() {
 	monsters.push_back(new Fodder(player));
 	monsters.push_back(new Fodder(player));
 	monsters.push_back(new Fodder(player));
+
+	items.push_back(new HealthPack(player));
+	items.push_back(new HealthPack(player));
+	items.push_back(new CombatPack(player));
+	items.push_back(new CombatPack(player));
+	items.push_back(new StimulantPack(player));
+
 	lastTime = clock();
 
 	Enter();
@@ -45,6 +59,34 @@ void StatePlay::Update(Game &context)
 			}
 		}
 	}
+
+	for(unsigned int i = 0; i < items.size(); i++){
+		if(items[i] != NULL) {
+			if(items[i]->Update() == 1) {
+				if(player->GetHealth() >= 10) {
+					player->HealPlayer(1);
+					itemDelete = i+1;
+				}else {
+					(player->SetHealth(10));
+					itemDelete = i+1;
+				}
+			}
+			if(items[i]->Update() == 2) {
+				player->increaseStrength(2);
+				itemDelete = i+1;
+			}
+			if(items[i]->Update() == 3) {
+				player->increaseSpeed(1);
+				itemDelete = i+1;
+			}
+		}
+	}
+
+		if(itemDelete != NULL) {
+		delete items[itemDelete - 1];
+		items[itemDelete - 1] = NULL;
+	}
+				
 }
 
 void StatePlay::Draw(SDL_Window *window)
@@ -59,15 +101,21 @@ void StatePlay::Draw(SDL_Window *window)
 		}
 	}
 
+	for(unsigned int i = 0; i < items.size(); i++) {
+		if(items[i] != NULL) {
+			items[i]->Draw(window);
+		}
+	}
+
 	player->Draw(window); //draw player
-	
 	continuable = true; //game is continuable
 
-    glColor3f(0.0f,0.0f,0.0f);
-    currentTime = clock();
-   
-    float milliSecondsPerFrame = ((currentTime - lastTime)/(float)CLOCKS_PER_SEC*1000);
-	
+	std::stringstream strStream;
+	strStream << "Health: " << player->GetHealth() << "    Strength: " << player->GetStrength() << "    Speed: " << player->GetSpeed() << "    Money: " << player->GetMoney() << std::endl;
+	Label statsStream;
+	statsStream.textToTexture(strStream.str().c_str(), textFont);
+	statsStream.draw(-0.4f,-1.0f);
+
 	SDL_GL_SwapWindow(window); // swap buffers
 }
 
@@ -75,10 +123,27 @@ void StatePlay::Enter() {
 	//if game hasn't already been started, randomize all monster positions
 	if(!gameStarted) {
 		for(unsigned int i = 0; i < monsters.size(); i++){
-			monsters[i]->SetXPos((float(rand())/float(RAND_MAX)) * (0.85f - (-1.0f)) + (-1.0f));
-			monsters[i]->SetYPos((float(rand())/float(RAND_MAX)) * (0.85f - (-1.0f)) + (-1.0f));
+			monsters[i]->SetXPos(RAND_CODE * (0.85f - (-1.0f)) + (-1.0f));
+			monsters[i]->SetYPos(RAND_CODE * (0.85f - (-0.9f)) + (-0.9f));
 		}
-		gameStarted = true; //game already started is true
+		for(unsigned int i = 0; i < monsters.size(); i++){// checks to see if any collisions happen at the start of the game, if they do - randomise the spawns again
+			if(monsters[i]->Update() != NULL){
+				monsters[i]->SetXPos(RAND_CODE * (0.85f - (-1.0f)) + (-1.0f));
+				monsters[i]->SetYPos(RAND_CODE * (0.85f - (-0.9f)) + (-0.9f));
+			}
+		}
+		//randomizes all item spawns
+		for(unsigned int i = 0; i < items.size(); i++){
+			items[i]->SetXPos(RAND_CODE * (0.85f - (-1.0f)) + (-1.0f));
+			items[i]->SetYPos(RAND_CODE * (0.85f - (-0.9f)) + (-0.9f));
+		}
+		for(unsigned int i = 0; i < items.size(); i++){// checks to see if any collisions happen at the start of the game, if they do - randomise the spawns again
+			if(items[i]->Update() != NULL){
+				items[i]->SetXPos(RAND_CODE * (0.85f - (-1.0f)) + (-1.0f));
+				items[i]->SetYPos(RAND_CODE * (0.85f - (-0.9f)) + (-0.9f));
+			}
+		}
+		gameStarted = true; //game already started is set to true
 	}
 	
 	//delete monsters that have been collided with and lost. puny monsters!

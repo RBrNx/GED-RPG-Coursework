@@ -5,6 +5,7 @@
 #include "Label.h"
 #include "Player.h"
 #include "stateMainMenu.h"
+#include "Items.h"
 
 using std::vector;
 
@@ -29,6 +30,7 @@ public:
 
 private:
 	int enemyDelete;
+	int itemDelete;
 	bool continuable;
 	bool gameStarted;
 	clock_t currentTime;
@@ -40,6 +42,9 @@ private:
 	GameState * currentState;
 
 	vector<Monster *> monsters;
+	vector<Items *> items;
+
+	Label * statsStream;
 
 	Player * player;
 };

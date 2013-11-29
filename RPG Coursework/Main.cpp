@@ -22,7 +22,7 @@ GameState * splashState;
 // SDL manages the actual WinMain entry point for us
 int main(int argc, char *argv[])
 {
-	FreeConsole(); //starts game without a console
+	//FreeConsole(); //starts game without a console
 
 	Game * newGame = new Game();
 	newGame->init();

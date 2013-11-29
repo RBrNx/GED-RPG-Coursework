@@ -3,6 +3,9 @@
 #include "gameOverState.h"
 #include "Label.h"
 #include <sstream>
+#include <cstdlib>
+
+#define RAND_CODE (float(rand())/float(RAND_MAX))
 
 StateBattle::StateBattle() {
 	textFont = TTF_OpenFont("MavenPro-Regular.ttf", 24); //init font
@@ -15,11 +18,6 @@ StateBattle::StateBattle() {
 	playerText->textToTexture("Player",textFont);
 }
 
-void StateBattle::Update(Game &context)
-{
-
-}
-
 void StateBattle::setupCharacters(Monster * monster, Player* player) {
 	this->player = player; //passes player into the battle state so stats can be checked
 	this->monster = monster;
@@ -30,6 +28,16 @@ void StateBattle::setupCharacters(Monster * monster, Player* player) {
 		enemyText->textToTexture("Fodder",textFont);
 	}else if (monster->GetID() == 3){
 		enemyText->textToTexture("Raider",textFont);
+	}
+}
+
+void StateBattle::Update(Game &context)
+{
+	if (monsterDead == true) {
+		context.setState(gameOver);
+	}
+	else if(playerDead == true) {
+		context.setState(gameOver);
 	}
 }
 
@@ -72,17 +80,17 @@ void StateBattle::Draw(SDL_Window *window)
 
 	//puts the players health, strength and speed into a stringstream and displays it on screen
 	strStream << "Health: " << player->GetHealth() << std::endl;
-	Label playerStream(0.0f,0.0f);
+	Label playerStream;
 	playerStream.textToTexture(strStream.str().c_str(), textFont);
 	playerStream.draw(-0.4f,-0.6f);
 
 	strStream2 << "Strength: " << player->GetStrength() << std::endl;
-	Label playerStream2(0.0f,0.0f);
+	Label playerStream2;
 	playerStream2.textToTexture(strStream2.str().c_str(), textFont);
 	playerStream2.draw(-0.4f,-0.7f);
 
 	strStream3 << "Speed: " << player->GetSpeed() << std::endl;
-	Label playerStream3(0.0f,0.0f);
+	Label playerStream3;
 	playerStream3.textToTexture(strStream3.str().c_str(), textFont);
 	playerStream3.draw(-0.4f,-0.8f);
 
@@ -92,17 +100,17 @@ void StateBattle::Draw(SDL_Window *window)
 
 	//puts the monsters health, strength and speed into a stringstream and displays it onscreen
 	strStream4 << "Health: " << monster->GetHealth() << std::endl;
-	Label playerStream4(0.0f,0.0f);
+	Label playerStream4;
 	playerStream4.textToTexture(strStream4.str().c_str(), textFont);
 	playerStream4.draw(0.2f,0.8f);
 
 	strStream5 << "Strength: " << monster->GetStrength() << std::endl;
-	Label playerStream5(0.0f,0.0f);
+	Label playerStream5;
 	playerStream5.textToTexture(strStream5.str().c_str(), textFont);
 	playerStream5.draw(0.2f,0.7f);
 
 	strStream6 << "Speed: " << monster->GetSpeed() << std::endl;
-	Label playerStream6(0.0f,0.0f);
+	Label playerStream6;
 	playerStream6.textToTexture(strStream6.str().c_str(), textFont);
 	playerStream6.draw(0.2f,0.6f);
 	
@@ -110,11 +118,66 @@ void StateBattle::Draw(SDL_Window *window)
 }
 
 void StateBattle::CommenceBattle() {
+		do{
+			healthAtStart = player->GetHealth();
+		//if player is faster than monster, player hits first
+		if(player->GetSpeed() > monster->GetSpeed()){
+			std::cout << "Player hits first" << std::endl;
+			monster->subtractDamage(RAND_CODE * (player->GetStrength() - (2) + (2)));
+			if(monster->GetHealth() > 0) {
+				player->subtractDamage(RAND_CODE * (monster->GetStrength() - (2) + (2)));
+			}
+		}
 
+		//if player is slower than monster, monster hits first
+		if(player->GetSpeed() < monster->GetSpeed()){
+			std::cout << "Monster hits first" << std::endl;
+			std::cout << player->GetHealth() << std::endl;
+			player->subtractDamage(RAND_CODE * (monster->GetStrength() - (2) + (2)));
+			if(player->GetHealth() > 0) {
+				monster->subtractDamage(RAND_CODE * (player->GetStrength() - (2) + (2)));
+			}
+		}
+		//if speeds are equal, do a random pick. If random pick = 0, monster hits first. If random pick = 1, player hits first
+		if(player->GetSpeed() == monster->GetSpeed()){
+		 int randomPick = (float(rand())/float(RAND_MAX)) * (1.0f - 0.0f) + (0.0f);
+		 if(randomPick == 0){
+			 player->subtractDamage(RAND_CODE * (monster->GetStrength() - (2) + (2)));
+			if(player->GetHealth() > 0){
+				monster->subtractDamage(RAND_CODE * (player->GetStrength() - (2) + (2)));
+			}
+		 }
+		}
+		else {
+			monster->subtractDamage(RAND_CODE * (player->GetStrength() - (2) + (2)));
+			if(monster->GetHealth() > 0){
+				player->subtractDamage(RAND_CODE * (monster->GetStrength() - (2) + (2)));
+			}
+		}
+		}while(player->GetHealth() > 0 && monster->GetHealth() > 0);
+
+		healthAtEnd = player->GetHealth();
+		healthToRecover = (healthAtStart - healthAtEnd)/2;
+
+		if(player->GetHealth() <= 0){ playerDead = true;}
+		else if(monster->GetHealth() <= 0){ 
+			monsterDead = true; 
+			player->HealPlayer(healthToRecover);
+			player->SetMoney(monster->GetMoneyDrop());
+		}
+}
+
+bool StateBattle::GetMonsterDead() {
+	return monsterDead;
+}
+
+bool StateBattle::GetPlayerDead() {
+	return playerDead;
 }
 
 void StateBattle::Enter() {
-
+	monsterDead = false;
+	playerDead = false;
 }
 
 void StateBattle::Exit() {
@@ -146,6 +209,8 @@ void StateBattle::HandleSDLEvent(SDL_Event const &sdlEvent, Game &context) {
 		switch(sdlEvent.key.keysym.sym) {
 			case SDLK_ESCAPE:  
 				break;
+			case SDLK_SPACE:
+				CommenceBattle();
 			default:
 				break;
 		}

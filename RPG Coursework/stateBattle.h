@@ -25,11 +25,18 @@ public:
 	bool GetGameStarted();
 	void SetGameStarted();
 	void CommenceBattle();
+	bool GetMonsterDead();
+	bool GetPlayerDead();
 	void setupCharacters(Monster * monster, Player*);
 	~StateBattle();	
 
 private:
 
+	bool monsterDead;
+	bool playerDead;
+	int healthAtStart;
+	int healthAtEnd;
+	int healthToRecover;
 	TTF_Font* textFont;
 	Label * playerText;
 	Label * enemyText;

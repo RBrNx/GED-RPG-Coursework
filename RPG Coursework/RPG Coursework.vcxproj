@@ -80,9 +80,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Brute.cpp" />
+    <ClCompile Include="CombatPack.cpp" />
     <ClCompile Include="Fodder.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gameOverState.cpp" />
+    <ClCompile Include="HealthPack.cpp" />
+    <ClCompile Include="Items.cpp" />
     <ClCompile Include="Label.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Monster.cpp" />
@@ -93,13 +96,17 @@
     <ClCompile Include="stateMainMenu.cpp" />
     <ClCompile Include="statePlay.cpp" />
     <ClCompile Include="stateSplash.cpp" />
+    <ClCompile Include="StimulantPack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Brute.h" />
+    <ClInclude Include="CombatPack.h" />
     <ClInclude Include="Fodder.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gameOverState.h" />
     <ClInclude Include="gameState.h" />
+    <ClInclude Include="HealthPack.h" />
+    <ClInclude Include="Items.h" />
     <ClInclude Include="Label.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Player.h" />
@@ -109,6 +116,7 @@
     <ClInclude Include="stateMainMenu.h" />
     <ClInclude Include="statePlay.h" />
     <ClInclude Include="stateSplash.h" />
+    <ClInclude Include="StimulantPack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

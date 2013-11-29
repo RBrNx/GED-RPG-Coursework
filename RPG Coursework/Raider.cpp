@@ -13,6 +13,7 @@ Raider::Raider(Player * player) : Monster(player)
 	SetStrength(7);
 	SetSpeed(12);
 	SetID(3);
+	SetMoneyDrop(100);
 
 }
 

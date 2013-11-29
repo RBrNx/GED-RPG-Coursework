@@ -8,9 +8,11 @@ Player::Player(void)
 	playerText = new Label();
 	playerText->textToTexture("Player",textFont); //sets up label
 
-	Health = 12;
-	Strength = 7; //sets up initial stats
-	Speed = 12;
+
+	Health = 10;
+	Strength = 10; //sets up initial stats
+	Speed = 10;
+	Money = 0;
 
 	xsize = 0.15f;
 	ysize = 0.15f;
@@ -38,6 +40,10 @@ void Player::Draw(SDL_Window *window)
 	glEnd();
 
 	playerText->draw(xpos, ypos + ysize); //draws label
+}
+
+void Player::subtractDamage(int strength){
+	Health -= strength;
 }
 
 void Player::HandleSDLEvent(SDL_Event const &sdlEvent, Game &context) {
@@ -95,6 +101,30 @@ int Player::GetStrength(){
 
 int Player::GetSpeed(){
 	return Speed;
+}
+
+int Player::GetMoney(){
+	return Money;
+}
+
+void Player::SetHealth(int health){
+	Health = health;
+}
+
+void Player::HealPlayer(int recover){
+	Health += recover;
+}
+
+void Player::SetMoney(int money){
+	Money += money;
+}
+
+void Player::increaseSpeed(int speed){
+	Speed += speed;
+}
+
+void Player::increaseStrength(int strength){
+	Strength += strength;
 }
 
 Player::~Player(void)

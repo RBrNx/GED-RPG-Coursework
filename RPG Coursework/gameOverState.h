@@ -22,6 +22,8 @@ public:
 
 private:
 	TTF_Font* textFont;
+	Label * gameWinText;
+	Label * battleWinText;
 	Label * gameOverText;
 };
 

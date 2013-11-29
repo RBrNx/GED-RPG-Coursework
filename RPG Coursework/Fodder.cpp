@@ -13,6 +13,7 @@ Fodder::Fodder(Player * player) : Monster(player)
 	SetStrength(3);
 	SetSpeed(7);
 	SetID(2);
+	SetMoneyDrop(1);
 
 }
 

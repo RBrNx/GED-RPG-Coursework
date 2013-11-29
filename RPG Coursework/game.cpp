@@ -56,6 +56,7 @@ SDL_Window * Game::SetupRC(SDL_GLContext &context)
 
 void Game::init()
 {
+	srand((unsigned)time(NULL));
 	SDL_GLContext glContext; // OpenGL context handle
     Window = SetupRC(glContext); // Create window and render context
 	if(Window !=NULL) {

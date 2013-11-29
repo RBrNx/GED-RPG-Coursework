@@ -18,6 +18,7 @@ public:
 	int GetHealth();
 	int GetStrength();
 	int GetSpeed();
+	int GetMoneyDrop();
 
 	void SetXPos(float Xpos);
 	void SetYPos(float Ypos);
@@ -25,12 +26,16 @@ public:
 	void SetStrength(int strength);
 	void SetSpeed(int speed);
 	void SetID(int ID);
+	void SetMoneyDrop(int money);
+
+	void subtractDamage(int);
 	
 private:
 	int Health;
 	int Strength;
 	int Speed;
 	int ID; 
+	int MoneyDrop;
 
 	float xpos;
 	float ypos;

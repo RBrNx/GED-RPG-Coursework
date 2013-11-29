@@ -17,6 +17,14 @@ public:
 	int GetHealth();
 	int GetStrength();
 	int GetSpeed();
+	int GetMoney();
+	void increaseSpeed(int);
+	void increaseStrength(int);
+	void HealPlayer(int);
+	void subtractDamage(int);
+
+	void SetHealth(int);
+	void SetMoney(int);
 	~Player(void);
 
 private:

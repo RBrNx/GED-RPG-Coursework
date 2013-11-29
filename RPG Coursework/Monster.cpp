@@ -42,6 +42,10 @@ void Monster::SetID(int id){
 	ID = id;
 }
 
+void Monster::SetMoneyDrop(int money){
+	MoneyDrop = money;
+}
+
 float Monster::GetXPos(){
 	return xpos;
 }
@@ -72,6 +76,14 @@ int Monster::GetStrength(){
 
 int Monster::GetSpeed(){
 	return Speed;
+}
+
+int Monster::GetMoneyDrop(){
+	return MoneyDrop;
+}
+
+void Monster::subtractDamage(int strength){
+	Health -= strength;
 }
 
 Monster::~Monster(void)
