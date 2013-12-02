@@ -27,12 +27,14 @@ public:
 	void Enter();
 	bool GetContinuable();
 	bool GetGameStarted();
+	int GetMonsterCount();
 	void SetGameStarted();
 	void Exit();
 	~StatePlay();	
 
 private:
 	int enemyDelete;
+	int monsterCount;
 	int itemDelete;
 	int itemSelect;
 	bool continuable;

@@ -1,31 +1,15 @@
-﻿Build started 02/12/2013 11:55:01.
-     1>Project "C:\Users\Conor\Documents\Visual Studio 2012\Projects\RBrNx277-rpg-coursework-7cbc35e218b6\RPG Coursework\RPG Coursework.vcxproj" on node 2 (Build target(s)).
+﻿Build started 02/12/2013 16:33:40.
+     1>Project "C:\Users\Conor\documents\visual studio 2012\Projects\RPG Coursework\RPG Coursework\RPG Coursework.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Brute.cpp Fodder.cpp Main.cpp Monster.cpp Raider.cpp game.cpp gameOverState.cpp stateBattle.cpp stateCredits.cpp stateMainMenu.cpp statePlay.cpp stateSplash.cpp
-         stateSplash.cpp
-         statePlay.cpp
-         stateMainMenu.cpp
-         stateCredits.cpp
-         stateBattle.cpp
-     1>c:\users\conor\documents\visual studio 2012\projects\rbrnx277-rpg-coursework-7cbc35e218b6\rpg coursework\statebattle.cpp(128): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\conor\documents\visual studio 2012\projects\rbrnx277-rpg-coursework-7cbc35e218b6\rpg coursework\statebattle.cpp(130): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\conor\documents\visual studio 2012\projects\rbrnx277-rpg-coursework-7cbc35e218b6\rpg coursework\statebattle.cpp(138): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\conor\documents\visual studio 2012\projects\rbrnx277-rpg-coursework-7cbc35e218b6\rpg coursework\statebattle.cpp(140): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\conor\documents\visual studio 2012\projects\rbrnx277-rpg-coursework-7cbc35e218b6\rpg coursework\statebattle.cpp(145): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\conor\documents\visual studio 2012\projects\rbrnx277-rpg-coursework-7cbc35e218b6\rpg coursework\statebattle.cpp(147): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\conor\documents\visual studio 2012\projects\rbrnx277-rpg-coursework-7cbc35e218b6\rpg coursework\statebattle.cpp(149): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\conor\documents\visual studio 2012\projects\rbrnx277-rpg-coursework-7cbc35e218b6\rpg coursework\statebattle.cpp(154): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\conor\documents\visual studio 2012\projects\rbrnx277-rpg-coursework-7cbc35e218b6\rpg coursework\statebattle.cpp(156): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-         gameOverState.cpp
-         game.cpp
-         Raider.cpp
-         Monster.cpp
-         Main.cpp
-         Fodder.cpp
-         Brute.cpp
-         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt stateCharacterSelect.cpp
+         stateCharacterSelect.cpp
+     1>c:\users\conor\documents\visual studio 2012\projects\rpg coursework\rpg coursework\statecharacterselect.cpp(21): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\conor\documents\visual studio 2012\projects\rpg coursework\rpg coursework\statecharacterselect.cpp(22): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\conor\documents\visual studio 2012\projects\rpg coursework\rpg coursework\statecharacterselect.cpp(23): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\conor\documents\visual studio 2012\projects\rpg coursework\rpg coursework\statecharacterselect.cpp(24): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\conor\documents\visual studio 2012\projects\rpg coursework\rpg coursework\statecharacterselect.cpp(28): warning C4305: 'argument' : truncation from 'double' to 'float'
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Conor\Documents\Visual Studio 2012\Projects\RBrNx277-rpg-coursework-7cbc35e218b6\Debug\RPG Coursework.exe" /INCREMENTAL /NOLOGO opengl32.lib SDL2.lib SDL2main.lib SDL2_ttf.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Conor\Documents\Visual Studio 2012\Projects\RBrNx277-rpg-coursework-7cbc35e218b6\Debug\RPG Coursework.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Conor\Documents\Visual Studio 2012\Projects\RBrNx277-rpg-coursework-7cbc35e218b6\Debug\RPG Coursework.lib" /MACHINE:X86 Debug\Brute.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Conor\documents\visual studio 2012\Projects\RPG Coursework\Debug\RPG Coursework.exe" /INCREMENTAL /NOLOGO opengl32.lib SDL2.lib SDL2main.lib SDL2_ttf.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Conor\documents\visual studio 2012\Projects\RPG Coursework\Debug\RPG Coursework.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Conor\documents\visual studio 2012\Projects\RPG Coursework\Debug\RPG Coursework.lib" /MACHINE:X86 Debug\Brute.obj
          Debug\CombatPack.obj
          Debug\Fodder.obj
          Debug\game.obj
@@ -44,9 +28,9 @@
          Debug\statePlay.obj
          Debug\stateSplash.obj
          Debug\StimulantPack.obj
-         RPG Coursework.vcxproj -> C:\Users\Conor\Documents\Visual Studio 2012\Projects\RBrNx277-rpg-coursework-7cbc35e218b6\Debug\RPG Coursework.exe
-     1>Done Building Project "C:\Users\Conor\Documents\Visual Studio 2012\Projects\RBrNx277-rpg-coursework-7cbc35e218b6\RPG Coursework\RPG Coursework.vcxproj" (Build target(s)).
+         RPG Coursework.vcxproj -> C:\Users\Conor\documents\visual studio 2012\Projects\RPG Coursework\Debug\RPG Coursework.exe
+     1>Done Building Project "C:\Users\Conor\documents\visual studio 2012\Projects\RPG Coursework\RPG Coursework\RPG Coursework.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:09.46
+Time Elapsed 00:00:01.11

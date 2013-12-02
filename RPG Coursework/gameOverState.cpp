@@ -19,14 +19,14 @@ void gameOverState::Draw(SDL_Window * window) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glClearColor(0.4f, 0.4f, 0.4f, 0.0f); //grey background
 
-
-	if(((StateBattle *)battleState)->GetMonsterDead() == true){
+	if(((StatePlay *)PlayState)->GetMonsterCount() == 0){
+		gameWinText->draw(-0.8f,0.0f);
+	}else if(((StateBattle *)battleState)->GetMonsterDead() == true){
 		battleWinText->draw(-0.8f,0.0f); //draw label
 	}
 	if(((StateBattle *)battleState)->GetPlayerDead() == true){
 		gameOverText->draw(-0.8f,0.0f);
 	}
-
 
 	SDL_GL_SwapWindow(window);
 }
@@ -67,6 +67,9 @@ void gameOverState::HandleSDLEvent(SDL_Event const &sdlEvent, Game &context) {
 			context.setState(PlayState);//go back to playstate after a win
 		}
 		if(((StateBattle *)battleState)->GetPlayerDead() == true){
+			context.setState(stateMenu); //go back to main menu after a loss
+		}
+		if(((StatePlay *)PlayState)->GetMonsterCount() == 0){
 			context.setState(stateMenu); //go back to main menu after a loss
 		}
 	}

@@ -10,6 +10,7 @@ Player::Player(void)
 
 
 	Health = 10;
+	MaxHealth = 10;
 	Strength = 10; //sets up initial stats
 	Speed = 10;
 	Money = 0;
@@ -113,6 +114,13 @@ void Player::SetHealth(int health){
 
 void Player::HealPlayer(int recover){
 	Health += recover;
+}
+
+void Player::IncreaseMaxHealth(){
+	if(Health == MaxHealth){
+		MaxHealth += 1;
+		Health = MaxHealth;
+	}else (Health = MaxHealth);
 }
 
 void Player::SetMoney(int money){

@@ -133,7 +133,7 @@ void StateBattle::CommenceBattle() {
 
 		//if player is slower than monster, monster hits first
 		if(player->GetSpeed() < monster->GetSpeed()){
-			std::cout << "Monster hits first" << std::endl;
+			std::cout << "Monster hits first for " << std::endl;
 			std::cout << player->GetHealth() << std::endl;
 			player->subtractDamage(RAND_CODE * (monster->GetStrength() - (2) + (2)));
 			if(player->GetHealth() > 0) {
@@ -166,7 +166,7 @@ void StateBattle::CommenceBattle() {
 			monsterDead = true; 
 			player->HealPlayer(healthToRecover);
 			player->SetMoney(monster->GetMoneyDrop());
-			int itemPick = (rand() % 100 - 1);
+			int itemPick = (rand() % 100 + 1);
 			if(itemPick <= monster->GetDropPercentage()){
 				itemDrop = true;
 			}else (itemDrop = false);

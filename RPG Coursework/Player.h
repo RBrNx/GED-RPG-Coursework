@@ -22,6 +22,7 @@ public:
 	void increaseStrength(int);
 	void HealPlayer(int);
 	void subtractDamage(int);
+	void IncreaseMaxHealth();
 
 	void SetHealth(int);
 	void SetMoney(int);
@@ -32,6 +33,7 @@ private:
 	int Strength;
 	int Speed;
 	int Money;
+	int MaxHealth;
 
 	float xpos;
 	float ypos;

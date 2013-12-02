@@ -44,7 +44,7 @@ StatePlay::StatePlay() {
 	items.push_back(new StimulantPack(player));
 
 	lastTime = clock();
-
+	monsterCount = monsters.size();
 	Enter();
 }
 
@@ -56,7 +56,8 @@ void StatePlay::Update(Game &context)
 			if (monsters[i]->Update()) {
 				context.setState(battleState);
 				((StateBattle *)battleState)->setupCharacters(monsters[i],player); //pass player data to battle state
-				enemyDelete = i+1; 
+				enemyDelete = i+1;
+				monsterCount --;
 			}
 		}
 	}
@@ -64,14 +65,9 @@ void StatePlay::Update(Game &context)
 	for(unsigned int i = 0; i < items.size(); i++){
 		if(items[i] != NULL) {
 			if(items[i]->Update() == 1) {
-				if(player->GetHealth() >= 10) {
-					player->HealPlayer(1);
-					itemDelete = i+1;
-				}else {
-					(player->SetHealth(10));
-					itemDelete = i+1;
+				player->IncreaseMaxHealth();
+				itemDelete = i+1;
 				}
-			}
 			if(items[i]->Update() == 2) {
 				player->increaseStrength(2);
 				itemDelete = i+1;
@@ -88,7 +84,7 @@ void StatePlay::Update(Game &context)
 		items[itemDelete - 1] = NULL;
 	}
 		if(((StateBattle*)battleState)->GetItemDrop() == true){
-		itemSelect = (rand() % 100 - 1);
+		itemSelect = (rand() % 100 + 1);
 		if(itemSelect >= 1 && itemSelect <= 60){
 			HP = new HealthPack(player);
 			HP->SetXPos(player->GetXPos());
@@ -110,7 +106,7 @@ void StatePlay::Update(Game &context)
 		}
 		((StateBattle*)battleState)->SetItemDrop(false);
 		
-	}		
+		}
 }
 
 void StatePlay::Draw(SDL_Window *window)
@@ -175,6 +171,7 @@ void StatePlay::Enter() {
 		delete monsters[enemyDelete - 1];
 		monsters[enemyDelete - 1] = NULL;
 	}
+
 }
 
 void StatePlay::Exit() {
@@ -190,6 +187,10 @@ bool StatePlay::GetGameStarted() {
 }
 void StatePlay::SetGameStarted() {
 	gameStarted = false;
+}
+
+int StatePlay::GetMonsterCount() {
+	return monsterCount;
 }
 
 void StatePlay::Init(Game * context) {

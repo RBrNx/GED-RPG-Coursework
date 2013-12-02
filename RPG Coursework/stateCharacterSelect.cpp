@@ -16,7 +16,7 @@ void stateCharacterSelect::Draw(SDL_Window * window) {
 
 	glBegin(GL_POLYGON); //draws box
 	
-		glColor3f(1.0,0.0,0.0);
+		glColor3f(1.0,1.0,1.0);
       
 		glVertex2f(-0.9, 0.9); 
 		glVertex2f(-0.9, 0.4); 
