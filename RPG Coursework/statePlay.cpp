@@ -43,7 +43,6 @@ StatePlay::StatePlay() {
 	items.push_back(new CombatPack(player));
 	items.push_back(new StimulantPack(player));
 
-	lastTime = clock();
 	monsterCount = monsters.size();
 	Enter();
 }

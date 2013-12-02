@@ -39,8 +39,6 @@ private:
 	int itemSelect;
 	bool continuable;
 	bool gameStarted;
-	clock_t currentTime;
-	clock_t lastTime;
 
 	TTF_Font* textFont;
 	GameState * playState;
