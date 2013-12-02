@@ -14,6 +14,8 @@ StateBattle::StateBattle() {
 	enemyText = new Label();
 	battleText = new Label();
 
+	itemDrop = false;
+
 	battleText->textToTexture("Let Battle Commence!",textFont);
 	playerText->textToTexture("Player",textFont);
 }
@@ -164,6 +166,10 @@ void StateBattle::CommenceBattle() {
 			monsterDead = true; 
 			player->HealPlayer(healthToRecover);
 			player->SetMoney(monster->GetMoneyDrop());
+			int itemPick = (rand() % 100 - 1);
+			if(itemPick <= monster->GetDropPercentage()){
+				itemDrop = true;
+			}else (itemDrop = false);
 		}
 }
 
@@ -173,6 +179,14 @@ bool StateBattle::GetMonsterDead() {
 
 bool StateBattle::GetPlayerDead() {
 	return playerDead;
+}
+
+bool StateBattle::GetItemDrop(){
+	return itemDrop;
+}
+
+void StateBattle::SetItemDrop(bool drop){
+	itemDrop = drop;
 }
 
 void StateBattle::Enter() {

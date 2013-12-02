@@ -6,6 +6,7 @@
 #include "gameOverState.h"
 #include "stateBattle.h"
 #include "stateSplash.h"
+#include "stateCharacterSelect.h"
 #include <iostream>
 #include <Windows.h>
 
@@ -17,6 +18,7 @@ GameState * stateCredit;
 GameState * gameOver;
 GameState * battleState;
 GameState * splashState;
+GameState * characterSelectState;
 
 // Program entry point
 // SDL manages the actual WinMain entry point for us
@@ -26,7 +28,8 @@ int main(int argc, char *argv[])
 
 	Game * newGame = new Game();
 	newGame->init();
-	stateMenu = new stateMainMenu(); //create all the states
+	stateMenu = new stateMainMenu();//create all the states
+	characterSelectState = new stateCharacterSelect();
 	PlayState = new StatePlay();
 	stateCredit = new stateCredits();
 	battleState = new StateBattle();
@@ -40,5 +43,7 @@ int main(int argc, char *argv[])
 	delete stateMenu;
 	delete stateCredit;
 	delete gameOver;
+	delete splashState;
+	delete characterSelectState;
 	return 0;
 }

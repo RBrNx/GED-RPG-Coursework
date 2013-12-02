@@ -14,6 +14,7 @@ Fodder::Fodder(Player * player) : Monster(player)
 	SetSpeed(7);
 	SetID(2);
 	SetMoneyDrop(1);
+	SetDropPercentage(5);
 
 }
 

@@ -19,6 +19,7 @@ public:
 	int GetStrength();
 	int GetSpeed();
 	int GetMoneyDrop();
+	int GetDropPercentage();
 
 	void SetXPos(float Xpos);
 	void SetYPos(float Ypos);
@@ -27,6 +28,7 @@ public:
 	void SetSpeed(int speed);
 	void SetID(int ID);
 	void SetMoneyDrop(int money);
+	void SetDropPercentage(int percentage);
 
 	void subtractDamage(int);
 	
@@ -36,6 +38,7 @@ private:
 	int Speed;
 	int ID; 
 	int MoneyDrop;
+	int dropPercentage;
 
 	float xpos;
 	float ypos;

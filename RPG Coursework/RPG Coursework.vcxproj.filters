@@ -88,10 +88,13 @@
       <Filter>Source Files\Items</Filter>
     </ClCompile>
     <ClCompile Include="CombatPack.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Items</Filter>
     </ClCompile>
     <ClCompile Include="StimulantPack.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="stateCharacterSelect.cpp">
+      <Filter>Source Files\Game\States</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -143,11 +146,14 @@
     <ClInclude Include="Items.h">
       <Filter>Header Files\Items</Filter>
     </ClInclude>
-    <ClInclude Include="CombatPack.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="StimulantPack.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatPack.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="stateCharacterSelect.h">
+      <Filter>Header Files\Game\States</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

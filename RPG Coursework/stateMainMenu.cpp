@@ -72,7 +72,7 @@ void stateMainMenu::HandleSDLEvent(SDL_Event const &sdlEvent, Game &context) {
 				delete PlayState;
 				PlayState = new StatePlay();
 			}
-			context.setState(PlayState); //plays game on "N" press
+			context.setState(characterSelectState); //plays game on "N" press
 			break;
 		case 'q': case 'Q': case SDLK_ESCAPE: 
 			exit(1); //quits game

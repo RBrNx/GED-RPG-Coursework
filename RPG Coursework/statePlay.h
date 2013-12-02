@@ -6,6 +6,9 @@
 #include "Player.h"
 #include "stateMainMenu.h"
 #include "Items.h"
+#include "HealthPack.h"
+#include "CombatPack.h"
+#include "StimulantPack.h"
 
 using std::vector;
 
@@ -31,6 +34,7 @@ public:
 private:
 	int enemyDelete;
 	int itemDelete;
+	int itemSelect;
 	bool continuable;
 	bool gameStarted;
 	clock_t currentTime;
@@ -43,6 +47,10 @@ private:
 
 	vector<Monster *> monsters;
 	vector<Items *> items;
+	
+	HealthPack * HP;
+	CombatPack * CP;
+	StimulantPack * SP;
 
 	Label * statsStream;
 

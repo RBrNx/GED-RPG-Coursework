@@ -10,6 +10,7 @@ Monster::Monster(Player * player)
 	Strength = 0;
 	Speed = 0;
 	ID = 0;
+	dropPercentage = 0;
 
 	xsize = 0.15f;
 	ysize = 0.15f;
@@ -46,6 +47,10 @@ void Monster::SetMoneyDrop(int money){
 	MoneyDrop = money;
 }
 
+void Monster::SetDropPercentage(int percentage){
+	dropPercentage = percentage;
+}
+
 float Monster::GetXPos(){
 	return xpos;
 }
@@ -80,6 +85,10 @@ int Monster::GetSpeed(){
 
 int Monster::GetMoneyDrop(){
 	return MoneyDrop;
+}
+
+int Monster::GetDropPercentage(){
+	return dropPercentage;
 }
 
 void Monster::subtractDamage(int strength){

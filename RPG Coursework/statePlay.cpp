@@ -21,6 +21,7 @@ StatePlay::StatePlay() {
 	gameStarted = false; //bool variable if game has already started
 	enemyDelete = 0; //init variable
 	itemDelete = 0; //init variable
+	itemSelect = 0;
 
 	player = new Player(); //create player
 
@@ -86,7 +87,30 @@ void StatePlay::Update(Game &context)
 		delete items[itemDelete - 1];
 		items[itemDelete - 1] = NULL;
 	}
-				
+		if(((StateBattle*)battleState)->GetItemDrop() == true){
+		itemSelect = (rand() % 100 - 1);
+		if(itemSelect >= 1 && itemSelect <= 60){
+			HP = new HealthPack(player);
+			HP->SetXPos(player->GetXPos());
+			HP->SetYPos(player->GetYPos());
+			delete HP;
+			std::cout << "Health pack dropped" << std::endl;
+		}
+		if(itemSelect >60 && itemSelect <= 80){
+			CP = new CombatPack(player);
+			CP->SetXPos(player->GetXPos());
+			CP->SetYPos(player->GetYPos());
+			std::cout << "Combat pack dropped" << std::endl;
+		}
+		if(itemSelect >80 && itemSelect <= 100){
+			SP = new StimulantPack(player);
+			SP->SetXPos(player->GetXPos());
+			SP->SetYPos(player->GetYPos());
+			std::cout << "Stimulant pack dropped" << std::endl;
+		}
+		((StateBattle*)battleState)->SetItemDrop(false);
+		
+	}		
 }
 
 void StatePlay::Draw(SDL_Window *window)
@@ -195,5 +219,8 @@ StatePlay::~StatePlay() {
 	//for all monsters in the vector, delete them
 	for(unsigned int i = 0; i < monsters.size(); i++) {
 		delete monsters[i];
+	}
+	for(unsigned int i = 0; i < items.size(); i++) {
+		delete items[i];
 	}
 }

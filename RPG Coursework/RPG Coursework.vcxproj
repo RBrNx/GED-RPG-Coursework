@@ -92,6 +92,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Raider.cpp" />
     <ClCompile Include="stateBattle.cpp" />
+    <ClCompile Include="stateCharacterSelect.cpp" />
     <ClCompile Include="stateCredits.cpp" />
     <ClCompile Include="stateMainMenu.cpp" />
     <ClCompile Include="statePlay.cpp" />
@@ -112,6 +113,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Raider.h" />
     <ClInclude Include="stateBattle.h" />
+    <ClInclude Include="stateCharacterSelect.h" />
     <ClInclude Include="stateCredits.h" />
     <ClInclude Include="stateMainMenu.h" />
     <ClInclude Include="statePlay.h" />

@@ -14,6 +14,7 @@ Raider::Raider(Player * player) : Monster(player)
 	SetSpeed(12);
 	SetID(3);
 	SetMoneyDrop(100);
+	SetDropPercentage(40);
 
 }
 

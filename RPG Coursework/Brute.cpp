@@ -13,6 +13,7 @@ Brute::Brute(Player * player) : Monster(player)
 	SetSpeed(6);
 	SetID(1);
 	SetMoneyDrop(10);
+	SetDropPercentage(15);
 }
 
 bool Brute::Update(){

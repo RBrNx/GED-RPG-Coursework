@@ -27,12 +27,15 @@ public:
 	void CommenceBattle();
 	bool GetMonsterDead();
 	bool GetPlayerDead();
+	bool GetItemDrop();
+	void SetItemDrop(bool);
 	void setupCharacters(Monster * monster, Player*);
 	~StateBattle();	
 
 private:
 
 	bool monsterDead;
+	bool itemDrop;
 	bool playerDead;
 	int healthAtStart;
 	int healthAtEnd;
