@@ -19,13 +19,12 @@ void gameOverState::Draw(SDL_Window * window) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glClearColor(0.4f, 0.4f, 0.4f, 0.0f); //grey background
 
-	if(((StatePlay *)PlayState)->GetMonsterCount() == 0){
+	if(((StateBattle *)battleState)->GetPlayerDead() == true){
+		gameOverText->draw(-0.8f,0.0f);
+	}else if(((StatePlay *)PlayState)->GetMonsterCount() == 0){
 		gameWinText->draw(-0.8f,0.0f);
 	}else if(((StateBattle *)battleState)->GetMonsterDead() == true){
 		battleWinText->draw(-0.8f,0.0f); //draw label
-	}
-	if(((StateBattle *)battleState)->GetPlayerDead() == true){
-		gameOverText->draw(-0.8f,0.0f);
 	}
 
 	SDL_GL_SwapWindow(window);
