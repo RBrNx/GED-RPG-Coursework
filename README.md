@@ -1,0 +1,1 @@
+In 2nd Year we were tasked to create a very simple "RPG" game to give us experience of creating a game engine, this is the repo for the resulting game.
